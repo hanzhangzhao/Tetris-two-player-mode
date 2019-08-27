@@ -6,7 +6,7 @@ var local = function(socket) {
     // timer
     var timer = null;
 
-    var timeCount;
+    // var timeCount = 0;
     // game time
     var time = 0;
 
@@ -41,7 +41,7 @@ var local = function(socket) {
             socket.emit('fixed');
 
             var lines = games.checkClear();
-            if (lines != 0){
+            if (lines){
                 games.addScore(lines);
                 socket.emit('line', lines);
 
@@ -87,17 +87,18 @@ var local = function(socket) {
     }
 
     // count game time
-    var timeCounter = function() {
-        time = time + INTERVAL;
+    var timeCounter = function () {
 
-            games.setTime(time);
-            if (time % 10 == 0) {
-                games.addTailLines(generateBottomLine(1));
-            }
-            socket.emit('time', time);
-        
-
+        time += 1;
+        games.setTime(time);
+        if (time % 10 == 0) {
+            var tailLines = generateBottomLine(1);
+            games.addTailLines(tailLines);
+            socket.emit("addTailLines", tailLines);
+        }
+        socket.emit('time', time);
     }
+
 
     // generate a random type square 
     var generateType = function(){
@@ -136,7 +137,6 @@ var local = function(socket) {
         games.proceedNext(nextType, nextDir);
         socket.emit('next', {type: nextType, dir: nextDir});
 
-        timeCount = 0;
         timer = setInterval(move, INTERVAL);
     }
 

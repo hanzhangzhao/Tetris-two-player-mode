@@ -225,7 +225,7 @@ var game = function () {
 
     // set time
     var setTime = function (time) {
-        timeDiv.innerHTML = Math.floor(time/1000) + "s";
+        timeDiv.innerHTML = time + 's';
     }
 
     // add score

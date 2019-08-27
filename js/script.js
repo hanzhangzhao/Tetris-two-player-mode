@@ -1,4 +1,4 @@
-var socket = io('ws://localhost:3000');
+var socket = io('ws://34.67.137.12:3000');
 
 var local = new local(socket);
 var remote = new remote(socket);

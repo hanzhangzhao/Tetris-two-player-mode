@@ -1,3 +1,6 @@
+html{
+    background-color: none;
+}
 body {
     font-family: 'Courier New', Courier, monospace;
     height: 100%;
@@ -12,12 +15,19 @@ body {
 .container {
     margin: 50px auto;
     display: block;
-    width: 1150px;
+    width: 1011px;
 }
 
 .section {
     width: 550px;
     display: inline-block;
+    margin: 0 20px 0 0;
+}
+
+#remote.section {
+    width: 400px;
+    display: inline-block;
+    margin: 0 0 0 20px;
 }
 
 .left{
@@ -114,8 +124,11 @@ body {
     border: 1px solid #777777;
 }
 
-.bg-gray {
-    
+.verticalLine{
+    width: 1px;
+    background-color:white;
+    height: 500px;
+    display: inline-block;
 }
 
 #logo {
@@ -138,7 +151,7 @@ body {
     text-align: center;
     width: 180px;
     position: absolute;
-    left: 550px;
+    left: 630px;
     margin-top: 180px;
 }
 
