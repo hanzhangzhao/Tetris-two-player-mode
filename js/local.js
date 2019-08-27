@@ -97,7 +97,7 @@ var local = function(socket) {
             socket.emit("addTailLines", tailLines);
         }
         socket.emit('time', time);
-
+    }
 
 
     // generate a random type square 
