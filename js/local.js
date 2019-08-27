@@ -91,9 +91,9 @@ var local = function(socket) {
         time = time + INTERVAL;
 
             games.setTime(time);
-            if (time % 10 == 0) {
-                games.addTailLines(generateBottomLine(1));
-            }
+//             if (time % 10 == 0) {
+//                 games.addTailLines(generateBottomLine(1));
+//             }
             socket.emit('time', time);
         
 
