@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <img src="img/logo.png" id="logo">
+        </div>
+
+        <div class="section" id="local">
+            <div class="mode">My Game Area</div>
+            <div id="waiting"></div>
+            <div class="left">
+                <div class="instructions"><span class="ins1">&#9668;</span><span class="ins1"
+                        style="margin-left: 7px">&#9658;</span></div>
+                <div>Left / Right</div>
+                <div class="instructions"><span class="ins1">&#9650;</span></div>
+                <div>Rotate</div>
+                <div class="instructions"><span class="ins1">&#9660;</span></div>
+                <div>Down</div>
+                <div class="instructions"><span class="ins1">SPACE</span></div>
+                <div>Hard Drop</div>
+            </div>
+            <div class="game" id="local_game"></div>
+            <div class="right">
+                <div class="next" id="local_next"></div>
+                <div class="info">
+                    <div>Time: <div id="local_time">0</div>
+                    </div>
+                    <hr />
+                    <div>Score: <div id="local_score">0</div>
+                    </div>
+                    <hr />
+                    <div id="local_over"></div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class="section" id="remote">
+            <div class="mode">Opponent Game Area</div>
+            <div class="left">
+                <div class="instructions"><span class="ins1">&#9668;</span><span class="ins1"
+                        style="margin-left: 7px">&#9658;</span></div>
+                <div>Left / Right</div>
+                <div class="instructions"><span class="ins1">&#9650;</span></div>
+                <div>Rotate</div>
+                <div class="instructions"><span class="ins1">&#9660;</span></div>
+                <div>Down</div>
+                <div class="instructions"><span class="ins1">SPACE</span></div>
+                <div>Hard Drop</div>
+            </div>
+            <div class="game" id="remote_game"></div>
+            <div class="right">
+                <div class="next" id="remote_next"></div>
+                <div class="info">
+                    <div>Time: <div id="remote_time">0</div>
+                    </div>
+                    <hr />
+                    <div>Score: <div id="remote_score">0</div>
+                    </div>
+                    <hr />
+                    <div id="remote_over"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/socket.io.js"></script>
+    <script src="js/square.js"></script>
+    <script src="js/squareFactory.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/local.js"></script>
+    <script src="js/remote.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
